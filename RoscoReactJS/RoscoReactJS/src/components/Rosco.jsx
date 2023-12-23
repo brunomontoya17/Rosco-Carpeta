@@ -10,9 +10,9 @@ function Rosco({listaLetras}) {
         arrayLetras.map((letra, index) => {
             console.log(letra+index)
             return (
-                <>
+                
                 <LetraRosco key={letra} char={letra} index={index} posX={50} posY={25} listaLetras={listaLetras} />
-                </>  
+               
             )
         })
     }
