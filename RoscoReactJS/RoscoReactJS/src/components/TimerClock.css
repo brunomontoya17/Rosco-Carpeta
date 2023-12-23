@@ -1,0 +1,21 @@
+.timercontainer {
+    float: right;
+    height: 75px;
+    width: 100px;
+    align-items: center;
+    justify-content: center;
+    font-size: 60;
+    text-align: center;
+}
+
+.timercontainer .run {
+    background-color: palegreen;
+}
+
+.timercontainer .pause{
+    background-color: rgb(241, 245, 47);
+}
+
+.timercontainer .halt{
+    background-color: rgb(209, 40, 18);
+}

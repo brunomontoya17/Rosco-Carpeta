@@ -1,0 +1,52 @@
+.Neutro {
+    font-size: 36px;
+    line-height: 60px;
+    background-color: LightSkyBlue;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+
+.Selected {
+    font-size: 36;
+    line-height: 54px;
+    background-color: LightSkyBlue;
+    height: 54px;
+    width: 54px;
+    border-radius: 50%;
+    text-align: center;
+    border-style: solid;
+    border-width: 3px;
+    border-color: Gold;
+}
+
+.Pasapalabra {
+    background-color: LemonChiffon;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 36;
+    text-align: center;
+    line-height: 60px;
+}
+
+.Correcta {
+    background-color: LimeGreen;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 36;
+    text-align: center;
+    line-height: 60px;
+}
+
+.Incorrecta {
+    background-color: OrangeRed;
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    font-size: 36;
+    text-align: center;
+    line-height: 60px;
+}
