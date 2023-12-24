@@ -4,18 +4,28 @@ import viteLogo from '/vite.svg'
 import './App.css'
 import { FormPlayers }  from './components/FormPlayers.jsx'
 import ContainerRoscos  from './components/ContainerRoscos.jsx'
+import Rosco from './components/Rosco.jsx'
+import PlayersContextProvider from './components/Contexts/PlayerContext.jsx'
 
 function App() {
 
+  const [showRosco, setShowRosco] = useState(false)
+
   return (
-    <div>
-      <h1>Bienvenidos al juego del rosco!!</h1>
-      <div className='marco'>
-          <ContainerRoscos />
-          <FormPlayers />
+    <PlayersContextProvider>
+      <div>
+        <div className='marco'>
+            <h1>Bienvenidos al juego del rosco!!</h1>
+            {
+              showRosco ?
+                <ContainerRoscos />
+                :
+                <FormPlayers showRosco={setShowRosco}/>
+            }
+            
+        </div>
       </div>
-      
-    </div>
+    </PlayersContextProvider>
   )
 }
 

@@ -1,6 +1,9 @@
-.tablero {
-    background-color: darkkhaki;
-    width: 70%;
-    height: 100%;
-    float: left;
+.circle {
+    display: flex;
+    gap: 10px;
+    flex-direction: row;
+}
+
+.opacityTrue {
+    opacity: 0;
 }

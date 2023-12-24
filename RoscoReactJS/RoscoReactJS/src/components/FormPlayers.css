@@ -1,13 +1,3 @@
-.entrada {
-    background-color: cadetblue;
-    width: 30%;
-    height: 100%;
-    float: left;
-}
-
-.inputtable {
-    background-color: palegreen;
-    border-collapse: collapse;
-    border-color: crimson;
-    border: 1px solid;
+.ant-form-item {
+    margin:0;
 }

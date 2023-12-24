@@ -1,36 +1,46 @@
-import { useState, Fragment } from 'react';
+import { useState, Fragment, useContext } from 'react';
+import { Button, Form, Input, Radio } from 'antd';
 import './FormPlayers.css';
+import { playersContext } from './Contexts/PlayerContext';
 
-export function FormPlayers() {
+export function FormPlayers({showRosco}) {
+
+    const { setPlayers } = useContext(playersContext)
+
+    const [dataPlayerOne, setDataOne] = useState({})
+    const [dataPlayerTwo, setDataTwo] = useState({})
+
+    const handleButton = () => {
+      showRosco(true);
+      setPlayers([dataPlayerOne, dataPlayerTwo])
+    }
+
     return (
-        <Fragment>
-            <div className='entrada'>
-                <form>
-                    <table className='inputtable'>
-                        <tr>
-                            <td><label forHtml='playername1'>Ingrese Nombre del jugador 1:</label></td>
-                            <td><input id='playername1' type='text' /></td>
-                        </tr>
-                        <tr>
-                            <td><label forHtml='timeplayer1'>Ingrese Tiempo del jugador 1:</label></td>
-                            <td><input id='timeplayer1' type='number' step={1} /></td>
-                        </tr>
-                        <tr>
-                            <td><label forHtml='playername2'>Ingrese Nombre del jugador 2:</label></td>
-                            <td><input id='playername2' type='text' /></td>
-                        </tr>
-                        <tr>
-                            <td><label forHtml='timeplayer2'>Ingrese Tiempo del jugador 2:</label></td>
-                            <td><input id='timeplayer2' type='number' step={1} /></td>
-                        </tr>
-                        <tr>
-                            <td>Boton</td>
-                            <td><input id='CrearJugadores' type='button' value='Ingresar' /></td>
-                        </tr>
-                    </table>
-                </form>
-            </div>
-        </Fragment>
-    )
+            <Form>
+              <div style={{display:"flex", gap:20}}>
+                <Form.Item label="Jugador 1">
+                <Input placeholder="Nombre" onChange={(e)=> setDataOne({...dataPlayerOne,name: e.target.value})}/>
+                </Form.Item>
+                <Form.Item label="Tiempo">
+                <Input placeholder="Tiempo en segundos" onChange={(e)=> setDataOne({...dataPlayerOne,time: e.target.value, playerTurn: true})}/>
+                </Form.Item>
+              </div>
+              <h2 style={{textAlign:"center", fontStyle:"italic"}}>VS</h2>
+              <div style={{display:"flex", gap:20}}>
+                <Form.Item label="Jugador 2">
+                    <Input placeholder="Nombre" onChange={(e)=> setDataTwo({...dataPlayerTwo,name: e.target.value})}/>
+                </Form.Item>
+                <Form.Item label="Tiempo">
+                    <Input placeholder="Tiempo en segundos" onChange={(e)=> setDataTwo({...dataPlayerTwo,time: e.target.value, playerTurn:false})}/>
+                </Form.Item>
+              </div>
+              <div style={{display: "flex", justifyContent: "center", marginTop: 25}}>
+                <Form.Item>
+                    <Button onClick={handleButton} type="primary">Submit</Button>
+                </Form.Item>
+              </div>
+            </Form>
+        )
+    
 }
 
